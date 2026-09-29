@@ -1,0 +1,487 @@
+{
+ "schema": "mira-session-report/1",
+ "session_id": "P01_20260929_110920",
+ "participant": "P01",
+ "recorded": "20260929_110920",
+ "condition": "anatomy",
+ "caveat": "Joint angles are repeatable to under a degree (precision). They have NOT been validated against a goniometer (accuracy). Monocular webcam; depth is inferred.",
+ "meta": {
+  "participant": "P01",
+  "started": "2026-09-29T11:09:20",
+  "condition": "anatomy",
+  "hands_expected": "both",
+  "task": "static_fist",
+  "power": "AC",
+  "mirror_wflip": true,
+  "td_version": "099.2025.32820",
+  "rate_hz": 30,
+  "code_sha1": {
+   "hand_engine.py": "b882ce61b5f8",
+   "stabilise.py": "c6e195ce515c",
+   "derived.py": "c8aa8b6f246f",
+   "logger.py": "18841bce4cdb",
+   "gen_data.py": "639846beb9da",
+   "mesh_data.py": "406d9ff9aa82",
+   "generative.frag": "d5d326b8914c",
+   "water.frag": "b64a3df90ac2",
+   "guide.frag": "8d0960d9d6a8"
+  },
+  "caveat": "Angles are repeatable (precision), not validated against a goniometer (accuracy).",
+  "ended": "2026-09-29T11:09:30",
+  "duration_s": 10.03,
+  "rows": 301
+ },
+ "source_sha1": {
+  "r": "c82802926405",
+  "l": "500ac8961839"
+ },
+ "task": "static_fist",
+ "hands": {
+  "right": {
+   "available": true,
+   "rows": 301,
+   "duration_s": 10.0,
+   "presence_pct": 100.0,
+   "usable": true,
+   "dropouts": {
+    "count": 0,
+    "longest_s": 0.0
+   },
+   "confidence": {
+    "mean": 0.999,
+    "min": 0.989
+   },
+   "joints_deg": {
+    "thumb_mcp": {
+     "p2": 135.7,
+     "p98": 153.8,
+     "rom_deg": 18.1
+    },
+    "thumb_ip": {
+     "p2": 132.5,
+     "p98": 152.7,
+     "rom_deg": 20.2
+    },
+    "index_mcp": {
+     "p2": 104.6,
+     "p98": 112.7,
+     "rom_deg": 8.1
+    },
+    "index_pip": {
+     "p2": 70.7,
+     "p98": 83.7,
+     "rom_deg": 13.1
+    },
+    "index_dip": {
+     "p2": 117.4,
+     "p98": 130.8,
+     "rom_deg": 13.4
+    },
+    "middle_mcp": {
+     "p2": 100.3,
+     "p98": 106.5,
+     "rom_deg": 6.2
+    },
+    "middle_pip": {
+     "p2": 75.4,
+     "p98": 82.6,
+     "rom_deg": 7.2
+    },
+    "middle_dip": {
+     "p2": 79.5,
+     "p98": 90.4,
+     "rom_deg": 10.9
+    },
+    "ring_mcp": {
+     "p2": 94.6,
+     "p98": 99.8,
+     "rom_deg": 5.2
+    },
+    "ring_pip": {
+     "p2": 81.0,
+     "p98": 86.8,
+     "rom_deg": 5.8
+    },
+    "ring_dip": {
+     "p2": 96.8,
+     "p98": 107.5,
+     "rom_deg": 10.8
+    },
+    "pinky_mcp": {
+     "p2": 101.0,
+     "p98": 107.6,
+     "rom_deg": 6.6
+    },
+    "pinky_pip": {
+     "p2": 91.8,
+     "p98": 100.7,
+     "rom_deg": 8.9
+    },
+    "pinky_dip": {
+     "p2": 94.5,
+     "p98": 103.8,
+     "rom_deg": 9.4
+    }
+   },
+   "frame_to_frame_median_deg": 0.41,
+   "frame_to_frame_note": "median over joints of the median per-frame change. During movement this includes real motion - it is NOT a noise floor. Use a static_* task for that.",
+   "repeated_frames_pct": 23.0,
+   "noise_floor": {
+    "per_joint": {
+     "thumb_mcp": {
+      "sd_deg": 0.78,
+      "median_step_deg": 0.28
+     },
+     "thumb_ip": {
+      "sd_deg": 1.06,
+      "median_step_deg": 0.37
+     },
+     "index_mcp": {
+      "sd_deg": 0.9,
+      "median_step_deg": 0.3
+     },
+     "index_pip": {
+      "sd_deg": 1.57,
+      "median_step_deg": 0.42
+     },
+     "index_dip": {
+      "sd_deg": 2.03,
+      "median_step_deg": 0.53
+     },
+     "middle_mcp": {
+      "sd_deg": 0.79,
+      "median_step_deg": 0.22
+     },
+     "middle_pip": {
+      "sd_deg": 0.79,
+      "median_step_deg": 0.23
+     },
+     "middle_dip": {
+      "sd_deg": 1.38,
+      "median_step_deg": 0.39
+     },
+     "ring_mcp": {
+      "sd_deg": 0.78,
+      "median_step_deg": 0.26
+     },
+     "ring_pip": {
+      "sd_deg": 0.82,
+      "median_step_deg": 0.26
+     },
+     "ring_dip": {
+      "sd_deg": 1.4,
+      "median_step_deg": 0.55
+     },
+     "pinky_mcp": {
+      "sd_deg": 0.79,
+      "median_step_deg": 0.36
+     },
+     "pinky_pip": {
+      "sd_deg": 0.8,
+      "median_step_deg": 0.37
+     },
+     "pinky_dip": {
+      "sd_deg": 1.24,
+      "median_step_deg": 0.46
+     }
+    },
+    "median_sd_deg": 0.86,
+    "window_s": 8.0,
+    "note": "static hold, first/last second dropped, linear drift removed, repeated frames ignored"
+   },
+   "extension": {
+    "thumb": {
+     "min": 0.49,
+     "max": 0.89
+    },
+    "index": {
+     "min": 0.0,
+     "max": 0.0
+    },
+    "middle": {
+     "min": 0.0,
+     "max": 0.0
+    },
+    "ring": {
+     "min": 0.0,
+     "max": 0.0
+    },
+    "pinky": {
+     "min": 0.0,
+     "max": 0.11
+    }
+   },
+   "repetitions": {
+    "count": 0,
+    "duration_s_median": null,
+    "per_minute": 0.0
+   },
+   "smoothness_sparc": {
+    "median": null,
+    "n_reps": 0,
+    "note": "SPARC of mean-extension speed per repetition, 5-sample moving-average low-pass first; closer to 0 = smoother. Compare within Mira only - not with published reaching values."
+   },
+   "index_pip_4_12hz_rms_deg": {
+    "value": 1.79,
+    "window_s": 10.0,
+    "note": "amplitude in the physiological-tremor band; includes webcam noise; NOT a tremor frequency or diagnosis"
+   },
+   "index_tip_speed_mm_s": {
+    "median": 36.0,
+    "p95": 109.0
+   },
+   "quality_flags": []
+  },
+  "left": {
+   "available": true,
+   "rows": 301,
+   "duration_s": 10.0,
+   "presence_pct": 100.0,
+   "usable": true,
+   "dropouts": {
+    "count": 0,
+    "longest_s": 0.0
+   },
+   "confidence": {
+    "mean": 0.999,
+    "min": 0.994
+   },
+   "joints_deg": {
+    "thumb_mcp": {
+     "p2": 117.0,
+     "p98": 136.5,
+     "rom_deg": 19.5
+    },
+    "thumb_ip": {
+     "p2": 128.5,
+     "p98": 143.0,
+     "rom_deg": 14.5
+    },
+    "index_mcp": {
+     "p2": 107.2,
+     "p98": 115.5,
+     "rom_deg": 8.3
+    },
+    "index_pip": {
+     "p2": 77.5,
+     "p98": 95.7,
+     "rom_deg": 18.2
+    },
+    "index_dip": {
+     "p2": 120.7,
+     "p98": 140.1,
+     "rom_deg": 19.4
+    },
+    "middle_mcp": {
+     "p2": 95.9,
+     "p98": 102.6,
+     "rom_deg": 6.7
+    },
+    "middle_pip": {
+     "p2": 82.1,
+     "p98": 90.3,
+     "rom_deg": 8.2
+    },
+    "middle_dip": {
+     "p2": 76.2,
+     "p98": 93.7,
+     "rom_deg": 17.6
+    },
+    "ring_mcp": {
+     "p2": 84.9,
+     "p98": 94.1,
+     "rom_deg": 9.2
+    },
+    "ring_pip": {
+     "p2": 82.4,
+     "p98": 92.2,
+     "rom_deg": 9.8
+    },
+    "ring_dip": {
+     "p2": 99.2,
+     "p98": 114.9,
+     "rom_deg": 15.7
+    },
+    "pinky_mcp": {
+     "p2": 89.7,
+     "p98": 104.0,
+     "rom_deg": 14.3
+    },
+    "pinky_pip": {
+     "p2": 99.2,
+     "p98": 106.0,
+     "rom_deg": 6.8
+    },
+    "pinky_dip": {
+     "p2": 83.3,
+     "p98": 101.7,
+     "rom_deg": 18.4
+    }
+   },
+   "frame_to_frame_median_deg": 0.63,
+   "frame_to_frame_note": "median over joints of the median per-frame change. During movement this includes real motion - it is NOT a noise floor. Use a static_* task for that.",
+   "repeated_frames_pct": 23.0,
+   "noise_floor": {
+    "per_joint": {
+     "thumb_mcp": {
+      "sd_deg": 0.78,
+      "median_step_deg": 0.27
+     },
+     "thumb_ip": {
+      "sd_deg": 0.87,
+      "median_step_deg": 0.31
+     },
+     "index_mcp": {
+      "sd_deg": 1.32,
+      "median_step_deg": 0.45
+     },
+     "index_pip": {
+      "sd_deg": 1.91,
+      "median_step_deg": 0.84
+     },
+     "index_dip": {
+      "sd_deg": 2.58,
+      "median_step_deg": 0.72
+     },
+     "middle_mcp": {
+      "sd_deg": 1.19,
+      "median_step_deg": 0.42
+     },
+     "middle_pip": {
+      "sd_deg": 1.44,
+      "median_step_deg": 0.43
+     },
+     "middle_dip": {
+      "sd_deg": 1.86,
+      "median_step_deg": 0.73
+     },
+     "ring_mcp": {
+      "sd_deg": 1.43,
+      "median_step_deg": 0.49
+     },
+     "ring_pip": {
+      "sd_deg": 1.29,
+      "median_step_deg": 0.49
+     },
+     "ring_dip": {
+      "sd_deg": 2.07,
+      "median_step_deg": 0.58
+     },
+     "pinky_mcp": {
+      "sd_deg": 1.94,
+      "median_step_deg": 0.54
+     },
+     "pinky_pip": {
+      "sd_deg": 1.7,
+      "median_step_deg": 0.62
+     },
+     "pinky_dip": {
+      "sd_deg": 2.19,
+      "median_step_deg": 0.76
+     }
+    },
+    "median_sd_deg": 1.57,
+    "window_s": 8.0,
+    "note": "static hold, first/last second dropped, linear drift removed, repeated frames ignored"
+   },
+   "extension": {
+    "thumb": {
+     "min": 0.41,
+     "max": 0.7
+    },
+    "index": {
+     "min": 0.0,
+     "max": 0.04
+    },
+    "middle": {
+     "min": 0.0,
+     "max": 0.0
+    },
+    "ring": {
+     "min": 0.0,
+     "max": 0.0
+    },
+    "pinky": {
+     "min": 0.09,
+     "max": 0.18
+    }
+   },
+   "repetitions": {
+    "count": 0,
+    "duration_s_median": null,
+    "per_minute": 0.0
+   },
+   "smoothness_sparc": {
+    "median": null,
+    "n_reps": 0,
+    "note": "SPARC of mean-extension speed per repetition, 5-sample moving-average low-pass first; closer to 0 = smoother. Compare within Mira only - not with published reaching values."
+   },
+   "index_pip_4_12hz_rms_deg": {
+    "value": 1.01,
+    "window_s": 10.0,
+    "note": "amplitude in the physiological-tremor band; includes webcam noise; NOT a tremor frequency or diagnosis"
+   },
+   "index_tip_speed_mm_s": {
+    "median": 78.0,
+    "p95": 218.0
+   },
+   "quality_flags": []
+  }
+ },
+ "timeline": {
+  "right": {
+   "dt": 0.5,
+   "ext": [
+    0.196,
+    0.112,
+    0.12,
+    0.119,
+    0.124,
+    0.119,
+    0.12,
+    0.128,
+    0.124,
+    0.122,
+    0.117,
+    0.116,
+    0.116,
+    0.125,
+    0.127,
+    0.128,
+    0.127,
+    0.128,
+    0.127,
+    0.129,
+    0.126
+   ],
+   "calibrated": false
+  },
+  "left": {
+   "dt": 0.5,
+   "ext": [
+    0.169,
+    0.117,
+    0.111,
+    0.116,
+    0.115,
+    0.115,
+    0.119,
+    0.12,
+    0.12,
+    0.119,
+    0.121,
+    0.119,
+    0.119,
+    0.116,
+    0.12,
+    0.127,
+    0.125,
+    0.122,
+    0.126,
+    0.124,
+    0.111
+   ],
+   "calibrated": false
+  }
+ }
+}
