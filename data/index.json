@@ -1,0 +1,262 @@
+{
+ "schema": "mira-session-report/1/index",
+ "sessions": [
+  {
+   "session_id": "P01_20260927_142913",
+   "participant": "P01",
+   "recorded": "20260927_142913",
+   "condition": "unknown (pre-build-17)",
+   "task": "",
+   "report": "P01_20260927_142913_report.json",
+   "duration_s": null,
+   "started": null,
+   "has_exercises": false,
+   "hands": {
+    "right": {
+     "usable": false,
+     "reps": null,
+     "index_pip_rom_deg": null,
+     "noise_floor_sd_deg": null,
+     "flags": []
+    },
+    "left": {
+     "usable": false,
+     "reps": null,
+     "index_pip_rom_deg": null,
+     "noise_floor_sd_deg": null,
+     "flags": []
+    }
+   }
+  },
+  {
+   "session_id": "P01_20260927_142942",
+   "participant": "P01",
+   "recorded": "20260927_142942",
+   "condition": "unknown (pre-build-17)",
+   "task": "",
+   "report": "P01_20260927_142942_report.json",
+   "duration_s": null,
+   "started": null,
+   "has_exercises": false,
+   "hands": {
+    "right": {
+     "usable": true,
+     "reps": 13,
+     "index_pip_rom_deg": 92.7,
+     "noise_floor_sd_deg": null,
+     "flags": [
+      "LONG_DROPOUT"
+     ]
+    },
+    "left": {
+     "usable": true,
+     "reps": 1,
+     "index_pip_rom_deg": 97.4,
+     "noise_floor_sd_deg": null,
+     "flags": [
+      "LOW_PRESENCE",
+      "LONG_DROPOUT",
+      "FEW_REPETITIONS"
+     ]
+    }
+   }
+  },
+  {
+   "session_id": "P01_20260929_110907",
+   "participant": "P01",
+   "recorded": "20260929_110907",
+   "condition": "anatomy",
+   "task": "static_open",
+   "report": "P01_20260929_110907_report.json",
+   "duration_s": 10.03,
+   "started": "2026-09-29T11:09:07",
+   "has_exercises": false,
+   "hands": {
+    "right": {
+     "usable": true,
+     "reps": 0,
+     "index_pip_rom_deg": 2.5,
+     "noise_floor_sd_deg": 0.64,
+     "flags": []
+    },
+    "left": {
+     "usable": true,
+     "reps": 0,
+     "index_pip_rom_deg": 2.1,
+     "noise_floor_sd_deg": 0.55,
+     "flags": []
+    }
+   }
+  },
+  {
+   "session_id": "P01_20260929_110920",
+   "participant": "P01",
+   "recorded": "20260929_110920",
+   "condition": "anatomy",
+   "task": "static_fist",
+   "report": "P01_20260929_110920_report.json",
+   "duration_s": 10.03,
+   "started": "2026-09-29T11:09:20",
+   "has_exercises": false,
+   "hands": {
+    "right": {
+     "usable": true,
+     "reps": 0,
+     "index_pip_rom_deg": 13.1,
+     "noise_floor_sd_deg": 0.86,
+     "flags": []
+    },
+    "left": {
+     "usable": true,
+     "reps": 0,
+     "index_pip_rom_deg": 18.2,
+     "noise_floor_sd_deg": 1.57,
+     "flags": []
+    }
+   }
+  },
+  {
+   "session_id": "P01_20260929_110933",
+   "participant": "P01",
+   "recorded": "20260929_110933",
+   "condition": "anatomy",
+   "task": "open_close",
+   "report": "P01_20260929_110933_report.json",
+   "duration_s": 40.0,
+   "started": "2026-09-29T11:09:33",
+   "has_exercises": false,
+   "hands": {
+    "right": {
+     "usable": true,
+     "reps": 13,
+     "index_pip_rom_deg": 93.6,
+     "noise_floor_sd_deg": null,
+     "flags": []
+    },
+    "left": {
+     "usable": true,
+     "reps": 13,
+     "index_pip_rom_deg": 99.3,
+     "noise_floor_sd_deg": null,
+     "flags": []
+    }
+   }
+  },
+  {
+   "session_id": "P01_20260929_111018",
+   "participant": "P01",
+   "recorded": "20260929_111018",
+   "condition": "plain",
+   "task": "open_close",
+   "report": "P01_20260929_111018_report.json",
+   "duration_s": 40.03,
+   "started": "2026-09-29T11:10:18",
+   "has_exercises": false,
+   "hands": {
+    "right": {
+     "usable": true,
+     "reps": 13,
+     "index_pip_rom_deg": 92.5,
+     "noise_floor_sd_deg": null,
+     "flags": []
+    },
+    "left": {
+     "usable": true,
+     "reps": 13,
+     "index_pip_rom_deg": 99.3,
+     "noise_floor_sd_deg": null,
+     "flags": []
+    }
+   }
+  },
+  {
+   "session_id": "P01_20260929_124757",
+   "participant": "P01",
+   "recorded": "20260929_124757",
+   "condition": "anatomy",
+   "task": "",
+   "report": "P01_20260929_124757_report.json",
+   "duration_s": 33.97,
+   "started": "2026-09-29T12:47:57",
+   "has_exercises": false,
+   "hands": {
+    "right": {
+     "usable": true,
+     "reps": 4,
+     "index_pip_rom_deg": 84.4,
+     "noise_floor_sd_deg": null,
+     "flags": [
+      "LONG_DROPOUT"
+     ]
+    },
+    "left": {
+     "usable": true,
+     "reps": 5,
+     "index_pip_rom_deg": 100.2,
+     "noise_floor_sd_deg": null,
+     "flags": [
+      "LONG_DROPOUT"
+     ]
+    }
+   }
+  },
+  {
+   "session_id": "P01_20260929_124915",
+   "participant": "P01",
+   "recorded": "20260929_124915",
+   "condition": "anatomy",
+   "task": "routine",
+   "report": "P01_20260929_124915_report.json",
+   "duration_s": 14.4,
+   "started": "2026-09-29T12:49:15",
+   "has_exercises": false,
+   "hands": {
+    "right": {
+     "usable": false,
+     "reps": null,
+     "index_pip_rom_deg": null,
+     "noise_floor_sd_deg": null,
+     "flags": []
+    },
+    "left": {
+     "usable": false,
+     "reps": null,
+     "index_pip_rom_deg": null,
+     "noise_floor_sd_deg": null,
+     "flags": []
+    }
+   }
+  },
+  {
+   "session_id": "P01_20260929_125457",
+   "participant": "P01",
+   "recorded": "20260929_125457",
+   "condition": "anatomy",
+   "task": "routine",
+   "report": "P01_20260929_125457_report.json",
+   "duration_s": 221.03,
+   "started": "2026-09-29T12:54:57",
+   "has_exercises": true,
+   "hands": {
+    "right": {
+     "usable": true,
+     "reps": 26,
+     "index_pip_rom_deg": 99.9,
+     "noise_floor_sd_deg": null,
+     "flags": [
+      "LONG_DROPOUT"
+     ]
+    },
+    "left": {
+     "usable": true,
+     "reps": 25,
+     "index_pip_rom_deg": 100.0,
+     "noise_floor_sd_deg": null,
+     "flags": [
+      "LONG_DROPOUT"
+     ]
+    }
+   }
+  }
+ ]
+}
