@@ -1,0 +1,459 @@
+{
+ "schema": "mira-session-report/1",
+ "session_id": "P01_20260929_124757",
+ "participant": "P01",
+ "recorded": "20260929_124757",
+ "condition": "anatomy",
+ "caveat": "Joint angles are repeatable to under a degree (precision). They have NOT been validated against a goniometer (accuracy). Monocular webcam; depth is inferred.",
+ "meta": {
+  "participant": "P01",
+  "started": "2026-09-29T12:47:57",
+  "condition": "anatomy",
+  "hands_expected": "both",
+  "task": "",
+  "power": "battery",
+  "mirror_wflip": true,
+  "td_version": "099.2025.32820",
+  "rate_hz": 30,
+  "code_sha1": {
+   "hand_engine.py": "734d32fa51e4",
+   "stabilise.py": "c6e195ce515c",
+   "derived.py": "c8aa8b6f246f",
+   "logger.py": "ac96f79c0aa6",
+   "gen_data.py": "639846beb9da",
+   "mesh_data.py": "406d9ff9aa82",
+   "generative.frag": "d5d326b8914c",
+   "water.frag": "b64a3df90ac2",
+   "guide.frag": "8d0960d9d6a8"
+  },
+  "caveat": "Angles are repeatable (precision), not validated against a goniometer (accuracy).",
+  "ended": "2026-09-29T12:48:30",
+  "duration_s": 33.97,
+  "rows": 1019
+ },
+ "source_sha1": {
+  "r": "aeb3e249f17b",
+  "l": "3bd7455d9360"
+ },
+ "task": "",
+ "hands": {
+  "right": {
+   "available": true,
+   "rows": 1019,
+   "duration_s": 33.9,
+   "presence_pct": 91.9,
+   "usable": true,
+   "dropouts": {
+    "count": 2,
+    "longest_s": 2.53
+   },
+   "confidence": {
+    "mean": 0.977,
+    "min": 0.786
+   },
+   "joints_deg": {
+    "thumb_mcp": {
+     "p2": 129.1,
+     "p98": 178.1,
+     "rom_deg": 49.0
+    },
+    "thumb_ip": {
+     "p2": 136.6,
+     "p98": 175.3,
+     "rom_deg": 38.7
+    },
+    "index_mcp": {
+     "p2": 83.1,
+     "p98": 174.9,
+     "rom_deg": 91.7
+    },
+    "index_pip": {
+     "p2": 87.2,
+     "p98": 171.6,
+     "rom_deg": 84.4
+    },
+    "index_dip": {
+     "p2": 106.6,
+     "p98": 167.2,
+     "rom_deg": 60.7
+    },
+    "middle_mcp": {
+     "p2": 81.4,
+     "p98": 172.7,
+     "rom_deg": 91.3
+    },
+    "middle_pip": {
+     "p2": 82.9,
+     "p98": 169.1,
+     "rom_deg": 86.2
+    },
+    "middle_dip": {
+     "p2": 72.8,
+     "p98": 179.0,
+     "rom_deg": 106.1
+    },
+    "ring_mcp": {
+     "p2": 75.6,
+     "p98": 176.5,
+     "rom_deg": 101.0
+    },
+    "ring_pip": {
+     "p2": 90.7,
+     "p98": 176.3,
+     "rom_deg": 85.6
+    },
+    "ring_dip": {
+     "p2": 87.0,
+     "p98": 176.2,
+     "rom_deg": 89.2
+    },
+    "pinky_mcp": {
+     "p2": 86.9,
+     "p98": 176.7,
+     "rom_deg": 89.8
+    },
+    "pinky_pip": {
+     "p2": 94.2,
+     "p98": 173.4,
+     "rom_deg": 79.2
+    },
+    "pinky_dip": {
+     "p2": 75.2,
+     "p98": 174.3,
+     "rom_deg": 99.0
+    }
+   },
+   "frame_to_frame_median_deg": 1.18,
+   "frame_to_frame_note": "median over joints of the median per-frame change. During movement this includes real motion - it is NOT a noise floor. Use a static_* task for that.",
+   "repeated_frames_pct": 10.7,
+   "extension": {
+    "thumb": {
+     "min": 0.57,
+     "max": 1.0
+    },
+    "index": {
+     "min": 0.0,
+     "max": 0.97
+    },
+    "middle": {
+     "min": 0.0,
+     "max": 0.94
+    },
+    "ring": {
+     "min": 0.0,
+     "max": 1.0
+    },
+    "pinky": {
+     "min": 0.03,
+     "max": 1.0
+    }
+   },
+   "repetitions": {
+    "count": 4,
+    "duration_s_median": 3.95,
+    "per_minute": 7.1
+   },
+   "smoothness_sparc": {
+    "median": -5.68,
+    "n_reps": 3,
+    "note": "SPARC of mean-extension speed per repetition, 5-sample moving-average low-pass first; closer to 0 = smoother. Compare within Mira only - not with published reaching values."
+   },
+   "index_pip_4_12hz_rms_deg": {
+    "value": 2.19,
+    "window_s": 25.7,
+    "note": "amplitude in the physiological-tremor band; includes webcam noise; NOT a tremor frequency or diagnosis"
+   },
+   "index_tip_speed_mm_s": {
+    "median": 200.0,
+    "p95": 800.0
+   },
+   "quality_flags": [
+    "LONG_DROPOUT"
+   ]
+  },
+  "left": {
+   "available": true,
+   "rows": 1019,
+   "duration_s": 33.9,
+   "presence_pct": 91.7,
+   "usable": true,
+   "dropouts": {
+    "count": 3,
+    "longest_s": 2.47
+   },
+   "confidence": {
+    "mean": 0.97,
+    "min": 0.704
+   },
+   "joints_deg": {
+    "thumb_mcp": {
+     "p2": 132.3,
+     "p98": 178.1,
+     "rom_deg": 45.8
+    },
+    "thumb_ip": {
+     "p2": 128.7,
+     "p98": 173.1,
+     "rom_deg": 44.4
+    },
+    "index_mcp": {
+     "p2": 92.9,
+     "p98": 173.1,
+     "rom_deg": 80.2
+    },
+    "index_pip": {
+     "p2": 78.2,
+     "p98": 178.4,
+     "rom_deg": 100.2
+    },
+    "index_dip": {
+     "p2": 107.7,
+     "p98": 169.5,
+     "rom_deg": 61.9
+    },
+    "middle_mcp": {
+     "p2": 96.0,
+     "p98": 173.6,
+     "rom_deg": 77.6
+    },
+    "middle_pip": {
+     "p2": 77.8,
+     "p98": 172.4,
+     "rom_deg": 94.6
+    },
+    "middle_dip": {
+     "p2": 73.8,
+     "p98": 175.9,
+     "rom_deg": 102.1
+    },
+    "ring_mcp": {
+     "p2": 85.7,
+     "p98": 175.2,
+     "rom_deg": 89.4
+    },
+    "ring_pip": {
+     "p2": 89.4,
+     "p98": 177.0,
+     "rom_deg": 87.6
+    },
+    "ring_dip": {
+     "p2": 91.9,
+     "p98": 178.1,
+     "rom_deg": 86.2
+    },
+    "pinky_mcp": {
+     "p2": 91.0,
+     "p98": 176.2,
+     "rom_deg": 85.2
+    },
+    "pinky_pip": {
+     "p2": 92.6,
+     "p98": 175.7,
+     "rom_deg": 83.1
+    },
+    "pinky_dip": {
+     "p2": 75.6,
+     "p98": 175.1,
+     "rom_deg": 99.5
+    }
+   },
+   "frame_to_frame_median_deg": 1.23,
+   "frame_to_frame_note": "median over joints of the median per-frame change. During movement this includes real motion - it is NOT a noise floor. Use a static_* task for that.",
+   "repeated_frames_pct": 10.7,
+   "extension": {
+    "thumb": {
+     "min": 0.41,
+     "max": 1.0
+    },
+    "index": {
+     "min": 0.0,
+     "max": 1.0
+    },
+    "middle": {
+     "min": 0.0,
+     "max": 0.98
+    },
+    "ring": {
+     "min": 0.0,
+     "max": 1.0
+    },
+    "pinky": {
+     "min": 0.01,
+     "max": 1.0
+    }
+   },
+   "repetitions": {
+    "count": 5,
+    "duration_s_median": 2.6,
+    "per_minute": 8.8
+   },
+   "smoothness_sparc": {
+    "median": -4.325,
+    "n_reps": 3,
+    "note": "SPARC of mean-extension speed per repetition, 5-sample moving-average low-pass first; closer to 0 = smoother. Compare within Mira only - not with published reaching values."
+   },
+   "index_pip_4_12hz_rms_deg": {
+    "value": 4.9,
+    "window_s": 12.9,
+    "note": "amplitude in the physiological-tremor band; includes webcam noise; NOT a tremor frequency or diagnosis"
+   },
+   "index_tip_speed_mm_s": {
+    "median": 212.0,
+    "p95": 893.0
+   },
+   "quality_flags": [
+    "LONG_DROPOUT"
+   ]
+  }
+ },
+ "timeline": {
+  "right": {
+   "dt": 0.5,
+   "ext": [
+    0.827,
+    0.833,
+    0.83,
+    0.834,
+    0.804,
+    0.794,
+    0.807,
+    0.804,
+    0.782,
+    0.799,
+    0.823,
+    0.776,
+    0.761,
+    0.826,
+    0.76,
+    0.647,
+    0.769,
+    0.69,
+    0.566,
+    0.635,
+    0.65,
+    0.299,
+    0.168,
+    0.183,
+    0.583,
+    0.778,
+    0.885,
+    0.898,
+    0.868,
+    0.592,
+    0.741,
+    0.336,
+    0.164,
+    0.248,
+    0.739,
+    0.741,
+    0.317,
+    0.233,
+    0.433,
+    0.425,
+    0.252,
+    0.401,
+    0.632,
+    0.846,
+    0.846,
+    0.804,
+    0.465,
+    0.457,
+    0.775,
+    0.897,
+    0.932,
+    0.894,
+    0.967,
+    0.937,
+    0.933,
+    0.926,
+    0.918,
+    0.9,
+    0.798,
+    0.752,
+    0.258,
+    0.426,
+    0.765,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "calibrated": false
+  },
+  "left": {
+   "dt": 0.5,
+   "ext": [
+    null,
+    null,
+    null,
+    null,
+    0.821,
+    0.817,
+    0.821,
+    0.833,
+    0.831,
+    0.815,
+    0.82,
+    0.714,
+    0.627,
+    0.72,
+    0.761,
+    0.503,
+    0.767,
+    0.672,
+    0.381,
+    0.639,
+    0.627,
+    0.241,
+    0.149,
+    0.154,
+    0.648,
+    0.862,
+    0.925,
+    0.896,
+    0.911,
+    0.405,
+    0.599,
+    0.281,
+    0.182,
+    0.217,
+    0.75,
+    0.778,
+    0.24,
+    0.137,
+    0.218,
+    0.202,
+    0.198,
+    0.234,
+    0.611,
+    0.919,
+    0.91,
+    0.883,
+    0.363,
+    0.459,
+    0.846,
+    0.841,
+    0.845,
+    0.84,
+    0.821,
+    0.914,
+    0.954,
+    0.977,
+    0.939,
+    0.967,
+    0.859,
+    0.798,
+    0.221,
+    0.436,
+    0.837,
+    0.833,
+    0.825,
+    0.833,
+    0.834,
+    0.833
+   ],
+   "calibrated": false
+  }
+ }
+}
