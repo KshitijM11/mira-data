@@ -1,0 +1,153 @@
+{
+ "schema": "mira-session-report/1",
+ "session_id": "P01_20260929_124915",
+ "participant": "P01",
+ "recorded": "20260929_124915",
+ "condition": "anatomy",
+ "caveat": "Joint angles are repeatable to under a degree (precision). They have NOT been validated against a goniometer (accuracy). Monocular webcam; depth is inferred.",
+ "meta": {
+  "participant": "P01",
+  "started": "2026-09-29T12:49:15",
+  "condition": "anatomy",
+  "hands_expected": "both",
+  "task": "routine",
+  "power": "battery",
+  "mirror_wflip": true,
+  "td_version": "099.2025.32820",
+  "rate_hz": 30,
+  "code_sha1": {
+   "hand_engine.py": "734d32fa51e4",
+   "stabilise.py": "c6e195ce515c",
+   "derived.py": "c8aa8b6f246f",
+   "logger.py": "ac96f79c0aa6",
+   "gen_data.py": "639846beb9da",
+   "mesh_data.py": "406d9ff9aa82",
+   "generative.frag": "d5d326b8914c",
+   "water.frag": "b64a3df90ac2",
+   "guide.frag": "8d0960d9d6a8"
+  },
+  "caveat": "Angles are repeatable (precision), not validated against a goniometer (accuracy).",
+  "ended": "2026-09-29T12:49:29",
+  "duration_s": 14.4,
+  "rows": 432,
+  "phases": [
+   {
+    "exercise": "E0",
+    "start": 5.0
+   }
+  ]
+ },
+ "source_sha1": {
+  "r": "71a4fad84895",
+  "l": "75b0ec4abe83"
+ },
+ "task": "routine",
+ "hands": {
+  "right": {
+   "available": true,
+   "rows": 432,
+   "duration_s": 14.4,
+   "presence_pct": 0.0,
+   "usable": false,
+   "note": "hand present for < 1 s - not analysed"
+  },
+  "left": {
+   "available": true,
+   "rows": 432,
+   "duration_s": 14.4,
+   "presence_pct": 0.0,
+   "usable": false,
+   "note": "hand present for < 1 s - not analysed"
+  }
+ },
+ "exercises": {
+  "right": {
+   "E0": {
+    "name": "Still hold",
+    "window_s": 9.4,
+    "presence_pct": 0.0,
+    "note": "hand not present for most of this exercise"
+   }
+  },
+  "left": {
+   "E0": {
+    "name": "Still hold",
+    "window_s": 9.4,
+    "presence_pct": 0.0,
+    "note": "hand not present for most of this exercise"
+   }
+  }
+ },
+ "timeline": {
+  "right": {
+   "dt": 0.5,
+   "ext": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "calibrated": false
+  },
+  "left": {
+   "dt": 0.5,
+   "ext": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "calibrated": false
+  }
+ }
+}
