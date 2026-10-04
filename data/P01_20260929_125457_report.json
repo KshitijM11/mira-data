@@ -397,7 +397,33 @@
      "pinky_mcp": 62.6,
      "pinky_pip": 58.0,
      "pinky_dip": 81.0
-    }
+    },
+    "marks": [
+     {
+      "t": 25.3,
+      "k": "rep"
+     },
+     {
+      "t": 28.8,
+      "k": "rep"
+     },
+     {
+      "t": 36.4,
+      "k": "rep"
+     },
+     {
+      "t": 43.6,
+      "k": "rep"
+     },
+     {
+      "t": 50.4,
+      "k": "rep"
+     },
+     {
+      "t": 57.0,
+      "k": "rep"
+     }
+    ]
    },
    "E2": {
     "name": "Thumb opposition",
@@ -428,7 +454,169 @@
      }
     },
     "round_s_median": 4.07,
-    "threshold_note": "touch = thumb-tip to fingertip < 0.45 palm widths, release > 0.65; relative distance, not contact"
+    "threshold_note": "touch = thumb-tip to fingertip < 0.45 palm widths, release > 0.65; relative distance, not contact",
+    "marks": [
+     {
+      "t": 65.0,
+      "k": "index"
+     },
+     {
+      "t": 67.7,
+      "k": "middle"
+     },
+     {
+      "t": 69.7,
+      "k": "ring"
+     },
+     {
+      "t": 71.0,
+      "k": "little"
+     },
+     {
+      "t": 71.0,
+      "k": "round"
+     },
+     {
+      "t": 72.9,
+      "k": "index"
+     },
+     {
+      "t": 74.7,
+      "k": "middle"
+     },
+     {
+      "t": 76.2,
+      "k": "ring"
+     },
+     {
+      "t": 77.6,
+      "k": "little"
+     },
+     {
+      "t": 77.6,
+      "k": "round"
+     },
+     {
+      "t": 79.0,
+      "k": "index"
+     },
+     {
+      "t": 80.5,
+      "k": "middle"
+     },
+     {
+      "t": 82.1,
+      "k": "ring"
+     },
+     {
+      "t": 83.3,
+      "k": "little"
+     },
+     {
+      "t": 83.3,
+      "k": "round"
+     },
+     {
+      "t": 84.4,
+      "k": "index"
+     },
+     {
+      "t": 86.1,
+      "k": "middle"
+     },
+     {
+      "t": 87.5,
+      "k": "ring"
+     },
+     {
+      "t": 88.5,
+      "k": "little"
+     },
+     {
+      "t": 88.5,
+      "k": "round"
+     },
+     {
+      "t": 89.8,
+      "k": "index"
+     },
+     {
+      "t": 91.4,
+      "k": "middle"
+     },
+     {
+      "t": 92.8,
+      "k": "ring"
+     },
+     {
+      "t": 93.9,
+      "k": "little"
+     },
+     {
+      "t": 93.9,
+      "k": "round"
+     },
+     {
+      "t": 95.1,
+      "k": "index"
+     },
+     {
+      "t": 96.4,
+      "k": "middle"
+     },
+     {
+      "t": 97.6,
+      "k": "ring"
+     },
+     {
+      "t": 98.5,
+      "k": "little"
+     },
+     {
+      "t": 98.5,
+      "k": "round"
+     },
+     {
+      "t": 99.9,
+      "k": "index"
+     },
+     {
+      "t": 101.2,
+      "k": "middle"
+     },
+     {
+      "t": 102.8,
+      "k": "ring"
+     },
+     {
+      "t": 103.6,
+      "k": "little"
+     },
+     {
+      "t": 103.6,
+      "k": "round"
+     },
+     {
+      "t": 104.7,
+      "k": "index"
+     },
+     {
+      "t": 106.1,
+      "k": "middle"
+     },
+     {
+      "t": 107.4,
+      "k": "ring"
+     },
+     {
+      "t": 108.6,
+      "k": "little"
+     },
+     {
+      "t": 108.6,
+      "k": "round"
+     }
+    ]
    },
    "E3": {
     "name": "Finger spread",
@@ -444,7 +632,65 @@
      "index-middle": 0.786,
      "middle-ring": 0.548,
      "ring-little": 1.01
-    }
+    },
+    "marks": [
+     {
+      "t": 117.0,
+      "k": "rep"
+     },
+     {
+      "t": 120.4,
+      "k": "rep"
+     },
+     {
+      "t": 123.3,
+      "k": "rep"
+     },
+     {
+      "t": 126.4,
+      "k": "rep"
+     },
+     {
+      "t": 129.2,
+      "k": "rep"
+     },
+     {
+      "t": 131.9,
+      "k": "rep"
+     },
+     {
+      "t": 134.9,
+      "k": "rep"
+     },
+     {
+      "t": 137.9,
+      "k": "rep"
+     },
+     {
+      "t": 140.5,
+      "k": "rep"
+     },
+     {
+      "t": 143.4,
+      "k": "rep"
+     },
+     {
+      "t": 146.1,
+      "k": "rep"
+     },
+     {
+      "t": 148.6,
+      "k": "rep"
+     },
+     {
+      "t": 151.1,
+      "k": "rep"
+     },
+     {
+      "t": 153.6,
+      "k": "rep"
+     }
+    ]
    },
    "E4": {
     "name": "Tendon glides",
@@ -538,7 +784,37 @@
      "pinky_mcp": 76.8,
      "pinky_pip": 69.3,
      "pinky_dip": 94.4
-    }
+    },
+    "marks": [
+     {
+      "t": 21.6,
+      "k": "rep"
+     },
+     {
+      "t": 24.9,
+      "k": "rep"
+     },
+     {
+      "t": 28.6,
+      "k": "rep"
+     },
+     {
+      "t": 36.3,
+      "k": "rep"
+     },
+     {
+      "t": 43.4,
+      "k": "rep"
+     },
+     {
+      "t": 50.2,
+      "k": "rep"
+     },
+     {
+      "t": 56.7,
+      "k": "rep"
+     }
+    ]
    },
    "E2": {
     "name": "Thumb opposition",
@@ -569,7 +845,169 @@
      }
     },
     "round_s_median": 3.97,
-    "threshold_note": "touch = thumb-tip to fingertip < 0.45 palm widths, release > 0.65; relative distance, not contact"
+    "threshold_note": "touch = thumb-tip to fingertip < 0.45 palm widths, release > 0.65; relative distance, not contact",
+    "marks": [
+     {
+      "t": 65.0,
+      "k": "index"
+     },
+     {
+      "t": 67.9,
+      "k": "middle"
+     },
+     {
+      "t": 69.7,
+      "k": "ring"
+     },
+     {
+      "t": 71.2,
+      "k": "little"
+     },
+     {
+      "t": 71.2,
+      "k": "round"
+     },
+     {
+      "t": 73.0,
+      "k": "index"
+     },
+     {
+      "t": 74.7,
+      "k": "middle"
+     },
+     {
+      "t": 76.2,
+      "k": "ring"
+     },
+     {
+      "t": 77.6,
+      "k": "little"
+     },
+     {
+      "t": 77.6,
+      "k": "round"
+     },
+     {
+      "t": 79.0,
+      "k": "index"
+     },
+     {
+      "t": 80.5,
+      "k": "middle"
+     },
+     {
+      "t": 81.8,
+      "k": "ring"
+     },
+     {
+      "t": 83.2,
+      "k": "little"
+     },
+     {
+      "t": 83.2,
+      "k": "round"
+     },
+     {
+      "t": 84.6,
+      "k": "index"
+     },
+     {
+      "t": 86.0,
+      "k": "middle"
+     },
+     {
+      "t": 87.4,
+      "k": "ring"
+     },
+     {
+      "t": 88.7,
+      "k": "little"
+     },
+     {
+      "t": 88.7,
+      "k": "round"
+     },
+     {
+      "t": 90.1,
+      "k": "index"
+     },
+     {
+      "t": 91.4,
+      "k": "middle"
+     },
+     {
+      "t": 92.6,
+      "k": "ring"
+     },
+     {
+      "t": 93.8,
+      "k": "little"
+     },
+     {
+      "t": 93.8,
+      "k": "round"
+     },
+     {
+      "t": 95.1,
+      "k": "index"
+     },
+     {
+      "t": 96.5,
+      "k": "middle"
+     },
+     {
+      "t": 97.7,
+      "k": "ring"
+     },
+     {
+      "t": 98.7,
+      "k": "little"
+     },
+     {
+      "t": 98.7,
+      "k": "round"
+     },
+     {
+      "t": 100.1,
+      "k": "index"
+     },
+     {
+      "t": 101.2,
+      "k": "middle"
+     },
+     {
+      "t": 102.4,
+      "k": "ring"
+     },
+     {
+      "t": 103.6,
+      "k": "little"
+     },
+     {
+      "t": 103.6,
+      "k": "round"
+     },
+     {
+      "t": 104.8,
+      "k": "index"
+     },
+     {
+      "t": 106.1,
+      "k": "middle"
+     },
+     {
+      "t": 107.4,
+      "k": "ring"
+     },
+     {
+      "t": 108.6,
+      "k": "little"
+     },
+     {
+      "t": 108.6,
+      "k": "round"
+     }
+    ]
    },
    "E3": {
     "name": "Finger spread",
@@ -585,7 +1023,65 @@
      "index-middle": 1.008,
      "middle-ring": 0.553,
      "ring-little": 1.012
-    }
+    },
+    "marks": [
+     {
+      "t": 117.0,
+      "k": "rep"
+     },
+     {
+      "t": 120.4,
+      "k": "rep"
+     },
+     {
+      "t": 123.3,
+      "k": "rep"
+     },
+     {
+      "t": 126.4,
+      "k": "rep"
+     },
+     {
+      "t": 129.2,
+      "k": "rep"
+     },
+     {
+      "t": 132.1,
+      "k": "rep"
+     },
+     {
+      "t": 134.8,
+      "k": "rep"
+     },
+     {
+      "t": 137.8,
+      "k": "rep"
+     },
+     {
+      "t": 140.6,
+      "k": "rep"
+     },
+     {
+      "t": 143.1,
+      "k": "rep"
+     },
+     {
+      "t": 146.1,
+      "k": "rep"
+     },
+     {
+      "t": 148.6,
+      "k": "rep"
+     },
+     {
+      "t": 150.9,
+      "k": "rep"
+     },
+     {
+      "t": 153.6,
+      "k": "rep"
+     }
+    ]
    },
    "E4": {
     "name": "Tendon glides",
