@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mira VR</title>
+<style>
+  :root { --acc:#00839B; --sig:#38E1FF; --bg:#14191D; --ink:#E9EEF0; --mute:#9AA6AC; }
+  html,body { margin:0; height:100%; background:var(--bg); color:var(--ink); font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; }
+  body { background-image: linear-gradient(rgba(111,211,228,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(111,211,228,.07) 1px, transparent 1px); background-size: 28px 28px; }
+  #gl { position:fixed; inset:0; z-index:0; visibility:hidden; }
+  body.previewing #gl { visibility:visible; }
+  body.previewing main { opacity:.0; pointer-events:none; }
+  main { position:relative; z-index:1; max-width:640px; margin:0 auto; padding:56px 24px; }
+  .tag { font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--sig); }
+  h1 { font-size:72px; margin:8px 0 4px; letter-spacing:-.03em; font-weight:800; }
+  p { color:var(--mute); line-height:1.55; font-size:17px; }
+  .row { display:flex; gap:12px; margin:28px 0 16px; flex-wrap:wrap; }
+  button { font:inherit; font-size:20px; font-weight:600; padding:18px 28px; border-radius:999px; border:1px solid var(--sig); background:var(--sig); color:#06232A; cursor:pointer; }
+  button.ghost { background:transparent; color:var(--ink); border-color:#4C5A61; }
+  button:disabled { opacity:.35; cursor:not-allowed; }
+  #status { color:var(--ink); min-height:1.5em; }
+  pre { background:rgba(0,0,0,.35); border:1px solid #2C363C; border-radius:12px; padding:16px; font-size:14px; overflow:auto; color:var(--ink); }
+  pre:empty { display:none; }
+  ol { color:var(--mute); line-height:1.7; padding-left:20px; }
+  .build { font-size:12px; color:#5f6b71; margin-top:40px; }
+</style>
+  <script type="module" crossorigin src="./assets/index-BX860pl_.js"></script>
+</head>
+<body>
+<main>
+  <div class="tag">Mira · VR feasibility test</div>
+  <h1>Mira</h1>
+  <p>Mixed reality with hand tracking. Your real room stays visible but dimmed; a nerve network follows each hand and a water surface on the desk answers your movement.</p>
+  <ol>
+    <li>Sit at a desk, headset on, controllers put down.</li>
+    <li>Press <b>Enter Mira</b>, then place both hands flat on the desk and hold still for a moment.</li>
+    <li>Move freely: open and close, spread your fingers, touch your fingertips, move across the desk.</li>
+    <li>After about two minutes press the <b>Meta button</b> to finish. The log is saved automatically.</li>
+  </ol>
+  <div class="row">
+    <button id="enter" disabled>Enter Mira</button>
+    <button id="preview" class="ghost">Desktop preview</button>
+  </div>
+  <p id="status">Checking this browser…</p>
+  <pre id="result"></pre>
+  <button id="download" class="ghost" hidden>Download the full log</button>
+  <div class="build">build <span id="build"></span></div>
+</main>
+</body>
+</html>
