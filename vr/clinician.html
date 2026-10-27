@@ -35,7 +35,7 @@
   td span { display:inline-block; width:40px; text-align:right; font-variant-numeric:tabular-nums; }
   .bar { display:inline-block; width:calc(100% - 46px); height:6px; background:#22303A; border-radius:4px; overflow:hidden; vertical-align:middle; }
   .bar b { display:block; height:100%; width:0; background:var(--sig); }
-  td:nth-child(3) .bar b { background:var(--warm); }
+  td:nth-child(2) .bar b { background:var(--warm); } /* left = orange, right = cyan, as in the dashboard */
   #layers { display:flex; flex-wrap:wrap; gap:6px; }
   .chip { display:inline-flex; align-items:center; gap:6px; font-size:13px; opacity:.45; }
   .chip.on { opacity:1; border-color:#5a6a72; }
@@ -43,8 +43,10 @@
   .small { font-size:12px; color:var(--mute); line-height:1.5; }
   @media (max-width: 860px) { .app { grid-template-columns: 1fr; grid-template-rows: 58vh auto; } aside { border-left:none; border-top:1px solid var(--line); } }
 </style>
-  <script type="module" crossorigin src="./assets/clinician-CZ4ospcd.js"></script>
-  <link rel="modulepreload" crossorigin href="./assets/hands-D-z17_8Q.js">
+  <script type="module" crossorigin src="../assets/clinician-DTKT28IF.js"></script>
+  <link rel="modulepreload" crossorigin href="../assets/hands-DjYdlgFF.js">
+  <link rel="modulepreload" crossorigin href="../assets/stage-BBKG_yf8.js">
+  <link rel="modulepreload" crossorigin href="../assets/routine-CYbDuIXz.js">
 </head>
 <body>
 <div class="app">
@@ -58,13 +60,13 @@
     <span id="state" class="pill">Not connected</span>
     <div class="row"><span class="small">Participant</span><input id="code" maxlength="16" /><button id="connect" class="primary">Connect</button></div>
     <section>
-      <div class="label">Now · <span id="codeShow"></span></div>
+      <div class="label">Now · <span id="codeShow"></span> <span id="condShow"></span></div>
       <div id="step">Waiting for the session</div>
       <div id="stepsub"></div>
       <div class="track"><div id="prog"></div></div>
     </section>
     <section>
-      <div class="label">Open and close, completed · left · right</div>
+      <div class="label" id="repsLabel">Open and close · this exercise · left · right</div>
       <div id="reps">–</div>
     </section>
     <section>
