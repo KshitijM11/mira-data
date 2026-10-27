@@ -22,29 +22,41 @@
   #status { color:var(--ink); min-height:1.5em; }
   pre { background:rgba(0,0,0,.35); border:1px solid #2C363C; border-radius:12px; padding:16px; font-size:14px; overflow:auto; color:var(--ink); }
   pre:empty { display:none; }
-  ol { color:var(--mute); line-height:1.7; padding-left:20px; }
+  ol.steps { list-style:none; padding:0; margin:28px 0 8px; counter-reset:s; }
+  ol.steps li { counter-increment:s; position:relative; padding:14px 0 14px 64px; font-size:22px; line-height:1.4; color:var(--ink); border-top:1px solid #26323A; }
+  ol.steps li::before { content:counter(s); position:absolute; left:0; top:12px; width:44px; height:44px; border-radius:50%; border:1px solid var(--sig); color:var(--sig); display:grid; place-items:center; font-size:20px; }
+  details.op { margin-top:36px; border-top:1px solid #26323A; padding-top:14px; color:var(--mute); }
+  details.op summary { cursor:pointer; font-size:15px; }
+  details.op label { display:block; margin:14px 0; font-size:15px; }
+  details.op input { font:inherit; font-size:18px; background:#0D1215; color:var(--ink); border:1px solid #4C5A61; border-radius:10px; padding:8px 12px; width:120px; margin-left:8px; text-transform:uppercase; }
+  details.op a { color:var(--sig); word-break:break-all; }
+  button#enter { font-size:26px; padding:22px 44px; }
   .build { font-size:12px; color:#5f6b71; margin-top:40px; }
 </style>
-  <script type="module" crossorigin src="./assets/index-BX860pl_.js"></script>
+  <script type="module" crossorigin src="./assets/main-BfvFBDqY.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/hands-D-z17_8Q.js">
 </head>
 <body>
 <main>
-  <div class="tag">Mira · VR feasibility test</div>
+  <div class="tag">Mira · hand rehabilitation</div>
   <h1>Mira</h1>
-  <p>Mixed reality with hand tracking. Your real room stays visible but dimmed; a nerve network follows each hand and a water surface on the desk answers your movement.</p>
-  <ol>
-    <li>Sit at a desk, headset on, controllers put down.</li>
-    <li>Press <b>Enter Mira</b>, then place both hands flat on the desk and hold still for a moment.</li>
-    <li>Move freely: open and close, spread your fingers, touch your fingertips, move across the desk.</li>
-    <li>After about two minutes press the <b>Meta button</b> to finish. The log is saved automatically.</li>
+  <ol class="steps">
+    <li><b>Sit at a table</b> and put the headset on. Put the controllers aside.</li>
+    <li>Press <b>Enter Mira</b>.</li>
+    <li><b>Follow the voice.</b> About five minutes. Your session saves by itself.</li>
   </ol>
   <div class="row">
     <button id="enter" disabled>Enter Mira</button>
-    <button id="preview" class="ghost">Desktop preview</button>
   </div>
   <p id="status">Checking this browser…</p>
   <pre id="result"></pre>
-  <button id="download" class="ghost" hidden>Download the full log</button>
+  <button id="download" class="ghost" hidden>Download the session file</button>
+  <details class="op">
+    <summary>For the therapist</summary>
+    <label>Participant code <input id="code" maxlength="16" autocomplete="off" spellcheck="false" /></label>
+    <p>Live clinician view (open on a laptop or phone):<br /><a id="clinlink" target="_blank" rel="noopener"></a></p>
+    <button id="preview" class="ghost">Desktop preview</button>
+  </details>
   <div class="build">build <span id="build"></span></div>
 </main>
 </body>
