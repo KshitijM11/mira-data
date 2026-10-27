@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mira · Clinician view</title>
+<style>
+  :root { --sig:#38E1FF; --bg:#0E1316; --panel:#141B1F; --ink:#E9EEF0; --mute:#93A3AA; --line:#25313A; --warm:#E0731B; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; height:100%; background:var(--bg); color:var(--ink); font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; }
+  .app { display:grid; grid-template-columns: 1fr 380px; height:100%; }
+  #view { position:relative; min-height:320px; background-image: linear-gradient(rgba(111,211,228,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(111,211,228,.05) 1px, transparent 1px); background-size: 32px 32px; }
+  #view canvas { position:absolute; inset:0; width:100%; height:100%; display:block; }
+  .views { position:absolute; left:16px; bottom:16px; display:flex; gap:8px; z-index:2; }
+  .tagline { position:absolute; left:16px; top:14px; z-index:2; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--sig); }
+  .note { position:absolute; right:16px; bottom:18px; z-index:2; font-size:12px; color:var(--mute); max-width:300px; text-align:right; }
+  aside { background:var(--panel); border-left:1px solid var(--line); padding:20px; overflow:auto; }
+  h1 { font-size:22px; margin:0 0 4px; font-weight:700; }
+  .pill { display:inline-block; font-size:12px; padding:4px 10px; border-radius:999px; border:1px solid #3a4850; color:var(--mute); }
+  .pill.live { border-color:var(--sig); color:var(--sig); }
+  .row { display:flex; gap:8px; align-items:center; margin:14px 0; }
+  input { font:inherit; font-size:16px; background:#0D1215; color:var(--ink); border:1px solid #3a4850; border-radius:10px; padding:8px 10px; width:100px; text-transform:uppercase; }
+  button { font:inherit; font-size:14px; padding:8px 14px; border-radius:999px; border:1px solid #3a4850; background:transparent; color:var(--ink); cursor:pointer; }
+  button.primary { background:var(--sig); border-color:var(--sig); color:#06232A; font-weight:600; }
+  section { border-top:1px solid var(--line); padding:14px 0; }
+  .label { font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--mute); margin-bottom:6px; }
+  #step { font-size:20px; font-weight:600; }
+  #stepsub { color:var(--mute); font-size:14px; margin-top:2px; }
+  .track { height:6px; background:#22303A; border-radius:6px; margin-top:10px; overflow:hidden; }
+  #prog { height:100%; width:0; background:var(--sig); transition:width .2s linear; }
+  #reps { font-size:30px; font-weight:700; font-variant-numeric:tabular-nums; }
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  th { text-align:left; font-weight:500; color:var(--mute); font-size:12px; padding:4px 0; }
+  td { padding:5px 6px 5px 0; vertical-align:middle; }
+  td span { display:inline-block; width:40px; text-align:right; font-variant-numeric:tabular-nums; }
+  .bar { display:inline-block; width:calc(100% - 46px); height:6px; background:#22303A; border-radius:4px; overflow:hidden; vertical-align:middle; }
+  .bar b { display:block; height:100%; width:0; background:var(--sig); }
+  td:nth-child(3) .bar b { background:var(--warm); }
+  #layers { display:flex; flex-wrap:wrap; gap:6px; }
+  .chip { display:inline-flex; align-items:center; gap:6px; font-size:13px; opacity:.45; }
+  .chip.on { opacity:1; border-color:#5a6a72; }
+  .chip i { width:10px; height:10px; border-radius:50%; display:inline-block; }
+  .small { font-size:12px; color:var(--mute); line-height:1.5; }
+  @media (max-width: 860px) { .app { grid-template-columns: 1fr; grid-template-rows: 58vh auto; } aside { border-left:none; border-top:1px solid var(--line); } }
+</style>
+  <script type="module" crossorigin src="./assets/clinician-CZ4ospcd.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/hands-D-z17_8Q.js">
+</head>
+<body>
+<div class="app">
+  <div id="view">
+    <div class="tagline">Mira · tendons and nerves</div>
+    <div class="views"><button data-view="patient">Patient’s view</button><button data-view="front">Front</button><button data-view="top">Top</button></div>
+    <div class="note">Drag to turn · scroll to zoom. Tendons and nerves are drawn from the tracked joints: an illustration, not imaging.</div>
+  </div>
+  <aside>
+    <h1>Clinician view</h1>
+    <span id="state" class="pill">Not connected</span>
+    <div class="row"><span class="small">Participant</span><input id="code" maxlength="16" /><button id="connect" class="primary">Connect</button></div>
+    <section>
+      <div class="label">Now · <span id="codeShow"></span></div>
+      <div id="step">Waiting for the session</div>
+      <div id="stepsub"></div>
+      <div class="track"><div id="prog"></div></div>
+    </section>
+    <section>
+      <div class="label">Open and close, completed · left · right</div>
+      <div id="reps">–</div>
+    </section>
+    <section>
+      <div class="label">Finger bend now (0° = straight)</div>
+      <table><thead><tr><th></th><th>Left</th><th>Right</th></tr></thead><tbody id="angles"></tbody></table>
+    </section>
+    <section>
+      <div class="label">Layers</div>
+      <div id="layers"></div>
+    </section>
+    <section class="small">
+      Headset <span id="fps">–</span> · build <span id="build"></span><br />
+      Joint angles are repeatable measurements from the headset’s hand tracking, not a clinical goniometer reading.
+      <div class="row"><button id="demo">Demo with simulated hands</button></div>
+    </section>
+  </aside>
+</div>
+</body>
+</html>
