@@ -1,0 +1,34 @@
+{
+ "voice_id": "DODLEQrClDo8wCz460ld",
+ "model": "eleven_multilingual_v2",
+ "settings": {
+  "stability": 0.7,
+  "similarity_boost": 0.75,
+  "style": 0.0,
+  "use_speaker_boost": false,
+  "speed": 0.9
+ },
+ "cues": {
+  "show_hands": "Show both hands to the camera.",
+  "right_only": "Now show only your right hand.",
+  "ready": "Get ready. Keep both hands inside the frame.",
+  "desk": "Place both hands flat on the table, and keep them still for a moment.",
+  "vr_ready": "Get ready.",
+  "e0": "Hold both hands open, and keep them still.",
+  "next_e1": "Next, open and close your hands, at your own pace.",
+  "e1": "Open fully, then make a gentle fist.",
+  "next_e2": "Next, touch your thumb to each fingertip in turn.",
+  "e2": "Thumb to index, middle, ring, and little finger.",
+  "next_e3": "Next, spread your fingers wide, then bring them together.",
+  "e3": "Spread wide, then together.",
+  "next_e4": "Last one. We will count to five on your fingers.",
+  "e4": "Start with a closed hand. Raise one finger for each number I say.",
+  "one": "One.",
+  "two": "Two.",
+  "three": "Three.",
+  "four": "Four.",
+  "five": "Five.",
+  "close": "And close.",
+  "done": "All done. Well done, and thank you."
+ }
+}
