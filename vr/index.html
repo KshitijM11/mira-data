@@ -30,11 +30,14 @@
   details.op label { display:block; margin:14px 0; font-size:15px; }
   details.op input { font:inherit; font-size:18px; background:#0D1215; color:var(--ink); border:1px solid #4C5A61; border-radius:10px; padding:8px 12px; width:120px; margin-left:8px; text-transform:uppercase; }
   details.op a { color:var(--sig); word-break:break-all; }
+  details.op select { font:inherit; font-size:16px; background:#0D1215; color:var(--ink); border:1px solid #4C5A61; border-radius:10px; padding:8px 12px; margin-left:8px; }
   button#enter { font-size:26px; padding:22px 44px; }
   .build { font-size:12px; color:#5f6b71; margin-top:40px; }
 </style>
-  <script type="module" crossorigin src="./assets/main-BfvFBDqY.js"></script>
-  <link rel="modulepreload" crossorigin href="./assets/hands-D-z17_8Q.js">
+  <script type="module" crossorigin src="../assets/vr-CB8G1T3P.js"></script>
+  <link rel="modulepreload" crossorigin href="../assets/hands-DjYdlgFF.js">
+  <link rel="modulepreload" crossorigin href="../assets/cues-Db1lVxtG.js">
+  <link rel="modulepreload" crossorigin href="../assets/routine-CYbDuIXz.js">
 </head>
 <body>
 <main>
@@ -43,7 +46,7 @@
   <ol class="steps">
     <li><b>Sit at a table</b> and put the headset on. Put the controllers aside.</li>
     <li>Press <b>Enter Mira</b>.</li>
-    <li><b>Follow the voice.</b> About five minutes. Your session saves by itself.</li>
+    <li><b>Follow the voice.</b> About two minutes. Your session saves by itself.</li>
   </ol>
   <div class="row">
     <button id="enter" disabled>Enter Mira</button>
@@ -54,6 +57,7 @@
   <details class="op">
     <summary>For the therapist</summary>
     <label>Participant code <input id="code" maxlength="16" autocomplete="off" spellcheck="false" /></label>
+    <label>Study condition <select id="cond"><option value="mira">Mira visuals (nerve hand + water)</option><option value="plain">Plain passthrough (voice and card only)</option></select></label>
     <p>Live clinician view (open on a laptop or phone):<br /><a id="clinlink" target="_blank" rel="noopener"></a></p>
     <button id="preview" class="ghost">Desktop preview</button>
   </details>
