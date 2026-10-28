@@ -37,23 +37,32 @@
   .bar b { display:block; height:100%; width:0; background:var(--sig); }
   td:nth-child(2) .bar b { background:var(--warm); } /* left = orange, right = cyan, as in the dashboard */
   #layers { display:flex; flex-wrap:wrap; gap:6px; }
+  #working { list-style:none; margin:6px 0 0; padding:0; display:flex; flex-direction:column; gap:6px; }
+  #working li { display:flex; align-items:center; gap:8px; font-size:14px; }
+  #working li i { width:8px; height:8px; border-radius:50%; flex:none; }
+  #working li span { flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  #working li em { font-style:normal; font-size:11px; color:var(--mute); font-family:ui-monospace,monospace; }
+  #working li b { width:56px; height:6px; border-radius:4px; background:#22303A; overflow:hidden; }
+  #working li b u { display:block; height:100%; background:var(--sig); text-decoration:none; }
+  #working li.none { color:var(--mute); }
+  .note { font-size:12px; color:var(--mute); margin:8px 0 0; line-height:1.45; }
   .chip { display:inline-flex; align-items:center; gap:6px; font-size:13px; opacity:.45; }
   .chip.on { opacity:1; border-color:#5a6a72; }
   .chip i { width:10px; height:10px; border-radius:50%; display:inline-block; }
   .small { font-size:12px; color:var(--mute); line-height:1.5; }
   @media (max-width: 860px) { .app { grid-template-columns: 1fr; grid-template-rows: 58vh auto; } aside { border-left:none; border-top:1px solid var(--line); } }
 </style>
-  <script type="module" crossorigin src="../assets/clinician-DTKT28IF.js"></script>
-  <link rel="modulepreload" crossorigin href="../assets/hands-DjYdlgFF.js">
-  <link rel="modulepreload" crossorigin href="../assets/stage-BBKG_yf8.js">
-  <link rel="modulepreload" crossorigin href="../assets/routine-CYbDuIXz.js">
+  <script type="module" crossorigin src="../assets/clinician-CNww38L5.js"></script>
+  <link rel="modulepreload" crossorigin href="../assets/hands-BrQ8oBz7.js">
+  <link rel="modulepreload" crossorigin href="../assets/stage-CJ9GrFLq.js">
+  <link rel="modulepreload" crossorigin href="../assets/routine-LXVkifvO.js">
 </head>
 <body>
 <div class="app">
   <div id="view">
-    <div class="tagline">Mira · tendons and nerves</div>
+    <div class="tagline">Mira · muscles, tendons and nerves</div>
     <div class="views"><button data-view="patient">Patient’s view</button><button data-view="front">Front</button><button data-view="top">Top</button></div>
-    <div class="note">Drag to turn · scroll to zoom. Tendons and nerves are drawn from the tracked joints: an illustration, not imaging.</div>
+    <div class="note">Drag to turn · scroll to zoom. A textbook hand fitted to the tracked joints: an illustration, not imaging. Lit = what this movement normally uses, inferred from the joints, not measured.<br /><span id="credit"></span></div>
   </div>
   <aside>
     <h1>Clinician view</h1>
@@ -63,11 +72,17 @@
       <div class="label">Now · <span id="codeShow"></span> <span id="condShow"></span></div>
       <div id="step">Waiting for the session</div>
       <div id="stepsub"></div>
+      <div id="checkin" class="note"></div>
       <div class="track"><div id="prog"></div></div>
     </section>
     <section>
       <div class="label" id="repsLabel">Open and close · this exercise · left · right</div>
       <div id="reps">–</div>
+    </section>
+    <section>
+      <div class="label">Working now · inferred from the movement</div>
+      <ul id="working"></ul>
+      <p id="targets" class="note"></p>
     </section>
     <section>
       <div class="label">Finger bend now (0° = straight)</div>
