@@ -14,6 +14,8 @@
   "ready": "Get ready. Keep both hands inside the frame.",
   "welcome": "Welcome to Mira. Before we begin, how are you feeling today? Touch a face.",
   "pain_before": "How much pain do you feel in your hands right now? Touch a number. Zero means no pain at all.",
+  "free_play": "Take a moment to get comfortable with your hands. Move them around, and look at what they do. When you are ready, touch Start session.",
+  "start_hint": "Whenever you are ready, touch Start session.",
   "desk": "Place both hands flat on the table, and keep them still for a moment.",
   "vr_ready": "Let's begin. First, we hold both hands open and still.",
   "pain_after": "Well done. How much pain do you feel in your hands now?",
