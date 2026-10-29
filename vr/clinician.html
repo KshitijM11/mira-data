@@ -5,59 +5,75 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mira · Clinician view</title>
 <style>
-  :root { --sig:#38E1FF; --bg:#0E1316; --panel:#141B1F; --ink:#E9EEF0; --mute:#93A3AA; --line:#25313A; --warm:#E0731B; }
+  /* the book identity (30 Oct): ink, one signal cyan, one orange; square corners, hairlines;
+     Archivo for text, IBM Plex Mono for labels and data, Michroma for numerals */
+  :root { --sig:#38D3F0; --bg:#0A0D0F; --panel:#0A0D0F; --ink:#E4E8E8; --mute:#8C979C; --line:#222A2F; --line2:#2E383D; --warm:#FF7A45; --hot:#FF5A1F;
+    --sans:'Archivo Variable', system-ui, sans-serif; --mono:'IBM Plex Mono', ui-monospace, monospace; --num:'Michroma', 'IBM Plex Mono', monospace; }
   * { box-sizing:border-box; }
-  html,body { margin:0; height:100%; background:var(--bg); color:var(--ink); font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; }
-  .app { display:grid; grid-template-columns: 1fr 380px; height:100%; }
-  #view { position:relative; min-height:320px; background-image: linear-gradient(rgba(111,211,228,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(111,211,228,.05) 1px, transparent 1px); background-size: 32px 32px; }
+  html,body { margin:0; height:100%; background:var(--bg); color:var(--ink); font-family:var(--sans); -webkit-font-smoothing:antialiased; }
+  .app { display:grid; grid-template-columns: 1fr 400px; height:100%; }
+  #view { position:relative; min-height:320px; background:#05080A; }
+  #view::after { content:""; position:absolute; inset:12px; pointer-events:none; z-index:1;
+    --c:rgba(228,232,232,.55); --l:16px; --w:1px;
+    background: linear-gradient(var(--c),var(--c)) top left/var(--l) var(--w) no-repeat, linear-gradient(var(--c),var(--c)) top left/var(--w) var(--l) no-repeat,
+      linear-gradient(var(--c),var(--c)) top right/var(--l) var(--w) no-repeat, linear-gradient(var(--c),var(--c)) top right/var(--w) var(--l) no-repeat,
+      linear-gradient(var(--c),var(--c)) bottom left/var(--l) var(--w) no-repeat, linear-gradient(var(--c),var(--c)) bottom left/var(--w) var(--l) no-repeat,
+      linear-gradient(var(--c),var(--c)) bottom right/var(--l) var(--w) no-repeat, linear-gradient(var(--c),var(--c)) bottom right/var(--w) var(--l) no-repeat; }
   #view canvas { position:absolute; inset:0; width:100%; height:100%; display:block; }
-  .views { position:absolute; left:16px; bottom:16px; display:flex; gap:8px; z-index:2; }
-  .tagline { position:absolute; left:16px; top:14px; z-index:2; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--sig); }
-  .note { position:absolute; right:16px; bottom:18px; z-index:2; font-size:12px; color:var(--mute); max-width:300px; text-align:right; }
-  aside { background:var(--panel); border-left:1px solid var(--line); padding:20px; overflow:auto; }
-  h1 { font-size:22px; margin:0 0 4px; font-weight:700; }
-  .pill { display:inline-block; font-size:12px; padding:4px 10px; border-radius:999px; border:1px solid #3a4850; color:var(--mute); }
+  .views { position:absolute; left:24px; bottom:24px; display:flex; gap:0; z-index:2; }
+  .views button + button { border-left:none; }
+  .tagline { position:absolute; left:24px; top:22px; z-index:2; font-family:var(--mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; background:var(--ink); color:var(--bg); padding:4px 8px 3px; }
+  .note { position:absolute; right:24px; bottom:28px; z-index:2; font-family:var(--mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--mute); max-width:320px; text-align:right; }
+  aside { background:var(--panel); border-left:1px solid var(--line2); padding:22px 24px; overflow:auto; }
+  h1 { font-size:20px; margin:0 0 8px; font-weight:800; font-stretch:125%; text-transform:uppercase; letter-spacing:-.005em; display:flex; align-items:center; gap:10px; }
+  h1::after { content:""; width:10px; height:10px; background:var(--hot); margin-left:auto; }
+  .pill { display:inline-block; font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; padding:4px 8px; border:1px solid var(--line2); color:var(--mute); }
   .pill.live { border-color:var(--sig); color:var(--sig); }
-  .row { display:flex; gap:8px; align-items:center; margin:14px 0; }
-  input { font:inherit; font-size:16px; background:#0D1215; color:var(--ink); border:1px solid #3a4850; border-radius:10px; padding:8px 10px; width:100px; text-transform:uppercase; }
-  button { font:inherit; font-size:14px; padding:8px 14px; border-radius:999px; border:1px solid #3a4850; background:transparent; color:var(--ink); cursor:pointer; }
-  button.primary { background:var(--sig); border-color:var(--sig); color:#06232A; font-weight:600; }
-  section { border-top:1px solid var(--line); padding:14px 0; }
-  .label { font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--mute); margin-bottom:6px; }
-  #step { font-size:20px; font-weight:600; }
-  #stepsub { color:var(--mute); font-size:14px; margin-top:2px; }
-  .track { height:6px; background:#22303A; border-radius:6px; margin-top:10px; overflow:hidden; }
+  .row { display:flex; gap:0; align-items:stretch; margin:14px 0; }
+  .row .small { align-self:center; margin-right:10px; font-family:var(--mono); text-transform:uppercase; letter-spacing:.08em; font-size:10px; }
+  input { font-family:var(--num); font-size:15px; background:transparent; color:var(--ink); border:1px solid var(--line2); border-radius:0; padding:8px 10px; width:110px; text-transform:uppercase; }
+  button { font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; padding:9px 12px; border-radius:0; border:1px solid var(--line2); background:transparent; color:var(--ink); cursor:pointer; }
+  button:hover { border-color:var(--mute); }
+  button.primary { background:var(--sig); border-color:var(--sig); color:#04181D; font-weight:600; }
+  section { border-top:1px solid var(--line2); padding:16px 0; }
+  .label { font-family:var(--mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--mute); margin-bottom:8px; display:flex; align-items:center; gap:8px; }
+  .label::before { content:""; width:18px; height:7px; flex:none; background:repeating-linear-gradient(-55deg, var(--mute) 0 1px, transparent 1px 3.2px); }
+  #step { font-size:19px; font-weight:800; font-stretch:125%; text-transform:uppercase; line-height:1.15; }
+  #stepsub { color:var(--mute); font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; margin-top:6px; }
+  .track { height:2px; background:var(--line2); margin-top:12px; overflow:hidden; }
   #prog { height:100%; width:0; background:var(--sig); transition:width .2s linear; }
-  #reps { font-size:30px; font-weight:700; font-variant-numeric:tabular-nums; }
+  #reps { font-family:var(--num); font-size:30px; letter-spacing:-.02em; }
   table { width:100%; border-collapse:collapse; font-size:14px; }
-  th { text-align:left; font-weight:500; color:var(--mute); font-size:12px; padding:4px 0; }
-  td { padding:5px 6px 5px 0; vertical-align:middle; }
-  td span { display:inline-block; width:40px; text-align:right; font-variant-numeric:tabular-nums; }
-  .bar { display:inline-block; width:calc(100% - 46px); height:6px; background:#22303A; border-radius:4px; overflow:hidden; vertical-align:middle; }
+  th { text-align:left; font-family:var(--mono); font-weight:500; color:var(--mute); font-size:10px; letter-spacing:.1em; text-transform:uppercase; padding:4px 0 6px; border-bottom:1px solid var(--line2); }
+  td { padding:6px 6px 6px 0; vertical-align:middle; border-bottom:1px solid var(--line); }
+  td span { display:inline-block; width:44px; text-align:right; font-family:var(--mono); font-size:12px; }
+  .bar { display:inline-block; width:calc(100% - 50px); height:4px; background:var(--line2); overflow:hidden; vertical-align:middle; }
   .bar b { display:block; height:100%; width:0; background:var(--sig); }
   td:nth-child(2) .bar b { background:var(--warm); } /* left = orange, right = cyan, as in the dashboard */
   #layers { display:flex; flex-wrap:wrap; gap:6px; }
-  #working { list-style:none; margin:6px 0 0; padding:0; display:flex; flex-direction:column; gap:6px; }
-  #working li { display:flex; align-items:center; gap:8px; font-size:14px; }
+  #working { list-style:none; margin:2px 0 0; padding:0; display:flex; flex-direction:column; gap:3px; }
+  #working li { display:flex; align-items:center; gap:8px; font-size:15px; }
   #working li span { flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-  #working li.grp { font-size:11px; color:var(--mute); letter-spacing:.04em; margin-top:4px; }
+  #working li.grp { font-family:var(--mono); font-size:10px; color:var(--mute); letter-spacing:.1em; text-transform:uppercase; margin-top:8px; }
+  #working li.grp:first-child { margin-top:0; }
   #working li.none { color:var(--mute); }
-  .note { font-size:12px; color:var(--mute); margin:8px 0 0; line-height:1.45; }
-  .chip { display:inline-flex; align-items:center; gap:6px; font-size:13px; opacity:.45; }
-  .chip.on { opacity:1; border-color:#5a6a72; }
-  .chip i { width:10px; height:10px; border-radius:50%; display:inline-block; }
+  aside .note { font-size:13px; color:var(--mute); margin:8px 0 0; line-height:1.45; }
+  .chip { display:inline-flex; align-items:center; gap:6px; opacity:.45; }
+  .chip.on { opacity:1; border-color:var(--mute); }
+  .chip i { width:8px; height:8px; display:inline-block; }
   .small { font-size:12px; color:var(--mute); line-height:1.5; }
-  @media (max-width: 860px) { .app { grid-template-columns: 1fr; grid-template-rows: 58vh auto; } aside { border-left:none; border-top:1px solid var(--line); } }
+  @media (max-width: 860px) { .app { grid-template-columns: 1fr; grid-template-rows: 58vh auto; } aside { border-left:none; border-top:1px solid var(--line2); } }
 </style>
-  <script type="module" crossorigin src="../assets/clinician-CztJ6wtE.js"></script>
+  <script type="module" crossorigin src="../assets/clinician-CZ3M8Njn.js"></script>
   <link rel="modulepreload" crossorigin href="../assets/hands-BL1Di0cP.js">
-  <link rel="modulepreload" crossorigin href="../assets/stage-q5hRTn6M.js">
-  <link rel="modulepreload" crossorigin href="../assets/routine-BYM8TD1N.js">
+  <link rel="modulepreload" crossorigin href="../assets/400-Be8TA3R8.js">
+  <link rel="modulepreload" crossorigin href="../assets/routine-NULigzNi.js">
+  <link rel="stylesheet" crossorigin href="../assets/400-BH2QgXr_.css">
 </head>
 <body>
 <div class="app">
   <div id="view">
-    <div class="tagline">Mira · muscles, tendons and nerves</div>
+    <div class="tagline">Mira_ · muscles, tendons and nerves</div>
     <div class="views"><button data-view="patient">Patient’s view</button><button data-view="front">Front</button><button data-view="top">Top</button></div>
     <div class="note">Drag to turn · scroll to zoom. <span id="credit"></span></div>
   </div>
