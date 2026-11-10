@@ -3,66 +3,75 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Mira VR</title>
+<title>MIRA_</title>
 <style>
-  :root { --acc:#00839B; --sig:#38E1FF; --bg:#14191D; --ink:#E9EEF0; --mute:#9AA6AC; }
-  html,body { margin:0; height:100%; background:var(--bg); color:var(--ink); font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; }
-  body { background-image: linear-gradient(rgba(111,211,228,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(111,211,228,.07) 1px, transparent 1px); background-size: 28px 28px; }
+  /* the thesis palette (10 Nov): black, orange, dark grey, light grey, cream; light mode here */
+  :root { --black:#171717; --orange:#F25623; --dgrey:#4D4D4D; --lgrey:#DEDEDE; --cream:#F1F0EB; }
+  html,body { margin:0; height:100%; background:var(--cream); color:var(--black); overflow:hidden; }
+  body { font-family: 'Archivo Variable', system-ui, sans-serif; }
   #gl { position:fixed; inset:0; z-index:0; visibility:hidden; }
   body.previewing #gl { visibility:visible; }
-  body.previewing main { opacity:.0; pointer-events:none; }
-  main { position:relative; z-index:1; max-width:640px; margin:0 auto; padding:56px 24px; }
-  .tag { font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--sig); }
-  h1 { font-size:72px; margin:8px 0 4px; letter-spacing:-.03em; font-weight:800; }
-  p { color:var(--mute); line-height:1.55; font-size:17px; }
-  .row { display:flex; gap:12px; margin:28px 0 16px; flex-wrap:wrap; }
-  button { font:inherit; font-size:20px; font-weight:600; padding:18px 28px; border-radius:999px; border:1px solid var(--sig); background:var(--sig); color:#06232A; cursor:pointer; }
-  button.ghost { background:transparent; color:var(--ink); border-color:#4C5A61; }
-  button:disabled { opacity:.35; cursor:not-allowed; }
-  #status { color:var(--ink); min-height:1.5em; }
-  pre { background:rgba(0,0,0,.35); border:1px solid #2C363C; border-radius:12px; padding:16px; font-size:14px; overflow:auto; color:var(--ink); }
+  body.previewing main, body.previewing #hello { display:none; }
+  #hello { position:fixed; right:0; top:6vh; width:52vw; height:94vh; z-index:0; transition:opacity 1.1s ease, transform 1.4s cubic-bezier(.2,.7,.2,1); }
+  body.steps #hello { opacity:0; transform:scale(1.08) translateY(-2vh); pointer-events:none; }
+  main { position:relative; z-index:1; height:100%; box-sizing:border-box; padding:7vh 6vw; display:flex; flex-direction:column; }
+  .mark { font-family:'Archivo Variable', sans-serif; font-stretch:125%; font-weight:800; font-size:min(15vw, 210px); line-height:.86; letter-spacing:-.02em; margin:0; transition:font-size .9s cubic-bezier(.2,.7,.2,1); }
+  .mark span { color:var(--orange); }
+  .tag { font-family:'IBM Plex Mono', ui-monospace, monospace; font-weight:500; font-size:clamp(13px, 1.5vw, 20px); letter-spacing:.16em; color:var(--dgrey); margin:2.2vh 0 0 .4vw; }
+  .bar { width:46px; height:10px; background:var(--orange); margin:0 0 3vh .4vw; }
+  .grow { flex:1; }
+  button { font-family:'Manrope Variable', system-ui, sans-serif; font-weight:700; font-size:clamp(20px, 2.2vw, 30px); padding:.75em 1.6em; border:0; border-radius:0; background:var(--orange); color:var(--black); cursor:pointer; letter-spacing:-.005em; transition:transform .2s, box-shadow .2s, opacity .3s; }
+  button:hover, button:focus-visible { box-shadow: inset 0 0 0 4px var(--black); outline:none; }
+  button:active { transform:translateY(1px); }
+  button:disabled { opacity:.35; cursor:not-allowed; box-shadow:none; }
+  button.ghost { background:transparent; box-shadow: inset 0 0 0 2px var(--dgrey); font-size:16px; padding:.6em 1.1em; }
+  #enterRow { display:flex; align-items:center; gap:24px; transition:opacity .5s; }
+  body.steps #enterRow { opacity:0; pointer-events:none; }
+  /* the instructions, after Enter */
+  #steps { position:absolute; left:6vw; right:6vw; bottom:7vh; opacity:0; transform:translateY(28px); pointer-events:none; transition:opacity .9s .55s ease, transform 1s .5s cubic-bezier(.2,.7,.2,1); }
+  body.steps #steps { opacity:1; transform:none; pointer-events:auto; }
+  body.steps .mark { font-size:min(8vw, 110px); }
+  ol { list-style:none; padding:0; margin:0 0 4.5vh; display:grid; grid-template-columns:repeat(3, 1fr); gap:3vw; }
+  ol li { border-top:3px solid var(--black); padding-top:2.2vh; }
+  ol li .n { font-family:'Michroma', sans-serif; font-size:clamp(22px, 2.6vw, 38px); color:var(--orange); display:block; margin-bottom:1.6vh; }
+  ol li h2 { font-family:'Manrope Variable', sans-serif; font-weight:700; font-size:clamp(22px, 2.5vw, 36px); margin:0 0 .5em; letter-spacing:-.01em; line-height:1.1; }
+  ol li p { font-size:clamp(15px, 1.35vw, 20px); line-height:1.45; color:var(--dgrey); margin:0; max-width:28ch; }
+  .go { display:flex; align-items:center; gap:28px; flex-wrap:wrap; }
+  #status { font-family:'IBM Plex Mono', monospace; font-size:clamp(12px, 1.1vw, 15px); letter-spacing:.12em; text-transform:uppercase; color:var(--dgrey); }
+  #status.ok::before { content:''; display:inline-block; width:10px; height:10px; background:#2E9E5B; margin-right:10px; }
+  #status.err::before { content:''; display:inline-block; width:10px; height:10px; background:#D7263D; margin-right:10px; }
+  pre { background:#fff; border:2px solid var(--lgrey); padding:12px; font-size:12px; max-height:30vh; overflow:auto; }
   pre:empty { display:none; }
-  ol.steps { list-style:none; padding:0; margin:28px 0 8px; counter-reset:s; }
-  ol.steps li { counter-increment:s; position:relative; padding:14px 0 14px 64px; font-size:22px; line-height:1.4; color:var(--ink); border-top:1px solid #26323A; }
-  ol.steps li::before { content:counter(s); position:absolute; left:0; top:12px; width:44px; height:44px; border-radius:50%; border:1px solid var(--sig); color:var(--sig); display:grid; place-items:center; font-size:20px; }
-  details.op { margin-top:36px; border-top:1px solid #26323A; padding-top:14px; color:var(--mute); }
-  details.op summary { cursor:pointer; font-size:15px; }
-  details.op label { display:block; margin:14px 0; font-size:15px; }
-  details.op input { font:inherit; font-size:18px; background:#0D1215; color:var(--ink); border:1px solid #4C5A61; border-radius:10px; padding:8px 12px; width:120px; margin-left:8px; text-transform:uppercase; }
-  details.op a { color:var(--sig); word-break:break-all; }
-  details.op select { font:inherit; font-size:16px; background:#0D1215; color:var(--ink); border:1px solid #4C5A61; border-radius:10px; padding:8px 12px; margin-left:8px; }
-  button#enter { font-size:26px; padding:22px 44px; }
-  .build { font-size:12px; color:#5f6b71; margin-top:40px; }
+  @media (max-width: 760px) { #hello { width:100vw; opacity:.5; } ol { grid-template-columns:1fr; gap:2vh; } ol li p { max-width:none; } }
 </style>
-  <script type="module" crossorigin src="../assets/vr-BwsLxG40.js"></script>
-  <link rel="modulepreload" crossorigin href="../assets/400-GKBEq2P_.js">
-  <link rel="modulepreload" crossorigin href="../assets/cues-C7zK5jzi.js">
-  <link rel="modulepreload" crossorigin href="../assets/routine-CDofCBab.js">
+  <script type="module" crossorigin src="../assets/vr-C9L6TaVB.js"></script>
+  <link rel="modulepreload" crossorigin href="../assets/400-B4W7RRod.js">
+  <link rel="modulepreload" crossorigin href="../assets/cues-B0h3pQml.js">
+  <link rel="modulepreload" crossorigin href="../assets/routine-vCoGE-4d.js">
   <link rel="stylesheet" crossorigin href="../assets/400-BMEAzGoT.css">
+  <link rel="stylesheet" crossorigin href="../assets/routine-DOgCy9oc.css">
 </head>
 <body>
+<canvas id="hello" aria-hidden="true"></canvas>
 <main>
-  <div class="tag">Mira · hand rehabilitation</div>
-  <h1>Mira</h1>
-  <ol class="steps">
-    <li><b>Sit at a table</b> and put the headset on. Put the controllers aside.</li>
-    <li>Press <b>Enter Mira</b>.</li>
-    <li><b>Follow the voice.</b> About two minutes. Your session saves by itself.</li>
-  </ol>
-  <div class="row">
-    <button id="enter" disabled>Enter Mira</button>
-  </div>
-  <p id="status">Checking this browser…</p>
-  <pre id="result"></pre>
-  <button id="download" class="ghost" hidden>Download the session file</button>
-  <details class="op">
-    <summary>For the therapist</summary>
-    <label>Participant code <input id="code" maxlength="16" autocomplete="off" spellcheck="false" /></label>
-    <label>Study condition <select id="cond"><option value="custom">Patient chooses (practice, not for the study)</option><option value="mira">Mira visuals (nerve hand + water)</option><option value="plain">Plain passthrough (voice and card only)</option></select></label>
-    <p>Live clinician view (open on a laptop or phone):<br /><a id="clinlink" target="_blank" rel="noopener"></a></p>
-    <button id="preview" class="ghost">Desktop preview</button>
-  </details>
-  <div class="build">build <span id="build"></span></div>
+  <div class="bar"></div>
+  <h1 class="mark">MIRA<span>_</span></h1>
+  <div class="tag">[ SEEING THE HAND THAT HEALS ]</div>
+  <div class="grow"></div>
+  <div id="enterRow"><button id="enter">Enter</button></div>
+  <section id="steps" aria-live="polite">
+    <ol>
+      <li><span class="n">01</span><h2>Sit at a table</h2><p>Put the headset on and the controllers aside. Your hands are all you need.</p></li>
+      <li><span class="n">02</span><h2>Press Ready</h2><p>You will see your room and your own hands. Keep them in front of you.</p></li>
+      <li><span class="n">03</span><h2>Follow the voice</h2><p>About two minutes. Your session saves by itself.</p></li>
+    </ol>
+    <div class="go">
+      <button id="ready">Ready</button>
+      <span id="status"></span>
+      <button id="download" class="ghost" hidden>Download the session file</button>
+    </div>
+    <pre id="result"></pre>
+  </section>
 </main>
 </body>
 </html>
