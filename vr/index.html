@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>MIRA_</title>
 <style>
+  /* type (24 Nov): Atkinson for text and big headings, Plex Mono capitals for labels and buttons,
+     Michroma for the wordmark and display numbers */
   /* the thesis palette (10 Nov): black, orange, dark grey, light grey, cream; light mode here */
   :root { --black:#171717; --orange:#F25623; --dgrey:#4D4D4D; --lgrey:#DEDEDE; --cream:#F1F0EB; }
   html,body { margin:0; height:100%; background:var(--cream); color:var(--black); overflow:hidden; }
@@ -20,7 +22,7 @@
   .tag { font-family:'IBM Plex Mono', ui-monospace, monospace; font-weight:500; font-size:clamp(13px, 1.5vw, 20px); letter-spacing:.16em; color:var(--dgrey); margin:2.2vh 0 0 .4vw; }
   .bar { width:46px; height:10px; background:var(--orange); margin:0 0 3vh .4vw; }
   .grow { flex:1; }
-  button { font-family:'IBM Plex Mono', ui-monospace, monospace; font-weight:600; font-size:clamp(20px, 2.2vw, 30px); padding:.75em 1.6em; border:0; border-radius:0; background:var(--orange); color:var(--black); cursor:pointer; letter-spacing:-.005em; transition:transform .2s, box-shadow .2s, opacity .3s; }
+  button { font-family:'IBM Plex Mono', ui-monospace, monospace; font-weight:600; font-size:clamp(20px, 2.2vw, 30px); padding:.75em 1.6em; border:0; border-radius:0; background:var(--orange); color:var(--black); cursor:pointer; letter-spacing:.06em; text-transform:uppercase; transition:transform .2s, box-shadow .2s, opacity .3s; }
   button:hover, button:focus-visible { box-shadow: inset 0 0 0 4px var(--black); outline:none; }
   button:active { transform:translateY(1px); }
   button:disabled { opacity:.35; cursor:not-allowed; box-shadow:none; }
@@ -33,9 +35,9 @@
   body.steps .mark { font-size:min(6.5vw, 90px); }
   ol { list-style:none; padding:0; margin:0 0 4.5vh; display:grid; grid-template-columns:repeat(3, 1fr); gap:3vw; }
   ol li { border-top:3px solid var(--black); padding-top:2.2vh; }
-  ol li .n { font-family:'IBM Plex Mono', monospace; font-weight:500; font-size:clamp(22px, 2.6vw, 38px); color:var(--orange); display:block; margin-bottom:1.6vh; }
-  ol li h2 { font-family:'IBM Plex Mono', monospace; font-weight:600; font-size:clamp(22px, 2.5vw, 36px); margin:0 0 .5em; letter-spacing:-.01em; line-height:1.1; }
-  ol li p { font-size:clamp(15px, 1.35vw, 20px); line-height:1.45; color:var(--dgrey); margin:0; max-width:28ch; }
+  ol li .n { font-family:'Michroma', sans-serif; font-weight:400; font-size:clamp(22px, 2.6vw, 38px); color:var(--orange); display:block; margin-bottom:1.6vh; }
+  ol li h2 { font-family:'Atkinson Hyperlegible Next', system-ui, sans-serif; font-weight:700; font-size:clamp(22px, 2.5vw, 36px); margin:0 0 .5em; letter-spacing:.008em; line-height:1.1; }
+  ol li p { font-size:clamp(15px, 1.35vw, 20px); line-height:1.45; letter-spacing:.015em; color:var(--dgrey); margin:0; max-width:28ch; }
   .go { display:flex; align-items:center; gap:28px; flex-wrap:wrap; }
   #status { font-family:'IBM Plex Mono', monospace; font-size:clamp(12px, 1.1vw, 15px); letter-spacing:.12em; text-transform:uppercase; color:var(--dgrey); }
   #status.ok::before { content:''; display:inline-block; width:10px; height:10px; background:#2E9E5B; margin-right:10px; }
@@ -44,10 +46,10 @@
   pre:empty { display:none; }
   @media (max-width: 760px) { #hello { width:100vw; opacity:.5; } ol { grid-template-columns:1fr; gap:2vh; } ol li p { max-width:none; } }
 </style>
-  <script type="module" crossorigin src="../assets/vr-Dh4NlepY.js"></script>
+  <script type="module" crossorigin src="../assets/vr-BEQAb1cc.js"></script>
   <link rel="modulepreload" crossorigin href="../assets/400-Bu-v2lrC.js">
   <link rel="modulepreload" crossorigin href="../assets/cues-CCJfTKC8.js">
-  <link rel="modulepreload" crossorigin href="../assets/routine-Dt1xI-U-.js">
+  <link rel="modulepreload" crossorigin href="../assets/routine-DTTyl-Wz.js">
   <link rel="stylesheet" crossorigin href="../assets/400-Ce9LpqGh.css">
   <link rel="stylesheet" crossorigin href="../assets/routine-a3bi0jDn.css">
 </head>
